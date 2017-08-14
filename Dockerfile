@@ -51,12 +51,6 @@ RUN apk -U --no-cache add \
     mesa-dri-swrast
 
 	
-# get node 6
-RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -sudo apt-get install -y nodejs
-
-# get chromium (stable) and Xvfb
-RUN apt-get install chromium-browser xvfb
-
 RUN npm --global install yarn && yarn global add lighthouse
 
 
