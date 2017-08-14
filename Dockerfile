@@ -20,9 +20,9 @@ RUN echo "http://dl-2.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositor
 #-----------------
 # Set ENV and change mode
 #-----------------
-ENV LIGHTHOUSE_CHROMIUM_PATH /usr/bin/chromium-browser
+ENV CHROME_PATH /usr/bin/chromium-browser
 
-ENV TZ "Europe/Berlin"
+ENV TZ "Europe/Karlsruhe"
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
 ENV SCREEN_WIDTH 750
@@ -50,7 +50,15 @@ RUN apk -U --no-cache add \
     ttf-freefont \
     mesa-dri-swrast
 
+	
+# get node 6
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -sudo apt-get install -y nodejs
+
+# get chromium (stable) and Xvfb
+RUN apt-get install chromium-browser xvfb
+
 RUN npm --global install yarn && yarn global add lighthouse
+
 
 # Minimize size
 
