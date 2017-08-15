@@ -65,13 +65,12 @@ RUN rm -rf /var/lib/apt/lists/* \
     /usr/lib/node_modules/npm/html \
     /usr/lib/node_modules/npm/scripts
 
-RUN ls
-RUN ls /bin
-RUN chmod +x /bin/lighthouse-chromium-xvfb.sh
-ADD /bin/lighthouse-chromium-xvfb.sh /lighthouse/lighthouse-chromium-xvfb.sh
+
+ADD lighthouse-chromium-xvfb.sh /lighthouse/lighthouse-chromium-xvfb.sh
 
 VOLUME /lighthouse/output
 
+RUN chmod +x /lighthouse/lighthouse-chromium-xvfb.sh
 ENTRYPOINT ["/lighthouse/lighthouse-chromium-xvfb.sh"]
 
 CMD ["test"]
