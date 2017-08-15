@@ -66,10 +66,9 @@ RUN rm -rf /var/lib/apt/lists/* \
     /usr/lib/node_modules/npm/scripts
 
 RUN ls
-RUN ls -la /
-RUN ls -la /lighthouse
-#RUN chmod +x /lighthouse-chromium-xvfb.sh
-ADD /lighthouse-chromium-xvfb.sh /lighthouse/lighthouse-chromium-xvfb.sh
+RUN ls /bin
+RUN chmod +x /bin/lighthouse-chromium-xvfb.sh
+ADD /bin/lighthouse-chromium-xvfb.sh /lighthouse/lighthouse-chromium-xvfb.sh
 
 VOLUME /lighthouse/output
 
