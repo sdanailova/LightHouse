@@ -50,7 +50,7 @@ RUN apk -U --no-cache add \
     ttf-freefont \
     mesa-dri-swrast
 
-RUN npm --global install yarn && yarn global add lighthouse
+RUN npm --global install lighthouse
 
 # Minimize size
 
