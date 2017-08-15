@@ -1,0 +1,7 @@
+mkdir results
+docker run matthiaswinkelmann/lighthouse-chromium-alpine --output-path=/lighthouse/output/results.html --save-assets --save-artifacts https://five-second-client.serversdev.getgo.com/1.4.4/index.html
+#cp /lighthouse/output/ results
+
+docker ps -al
+export IMAGE_ID1=$(docker ps -al --format '{{.Names}}')
+docker cp $IMAGE_ID1:/lighthouse/output/results.report.html results/results.html

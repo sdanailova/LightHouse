@@ -40,7 +40,7 @@ printf "Starting chromium, with debugger on port $CHROME_DEBUGGING_POST...\n\n"
 
 # --disable-webgl \
 
-$CHROME_PATH \
+$LIGHTHOUSE_CHROMIUM_PATH \
 --no-sandbox \
 --user-data-dir=${TMP_PROFILE_DIR}  \
 --start-maximized \
