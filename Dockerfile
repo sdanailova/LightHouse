@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM mhart/alpine-node:latest
 
 LABEL description "Run Google Chrome's Lighthouse Audit in the background"
 
