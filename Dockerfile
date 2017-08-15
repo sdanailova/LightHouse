@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:latest
+FROM alpine:latest
 
 LABEL description "Run Google Chrome's Lighthouse Audit in the background"
 
@@ -71,4 +71,3 @@ VOLUME /lighthouse/output
 
 ENTRYPOINT ["/lighthouse/lighthouse-chromium-xvfb.sh"]
 
-CMD ["test"]
