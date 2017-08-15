@@ -71,3 +71,4 @@ VOLUME /lighthouse/output
 
 ENTRYPOINT ["/lighthouse/lighthouse-chromium-xvfb.sh"]
 
+CMD ["/bin/bash"]
